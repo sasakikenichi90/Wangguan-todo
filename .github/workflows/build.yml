@@ -20,8 +20,8 @@ jobs:
           gradle-version: '8.9'
       - name: Unpack and test
         run: |
-          unzip -t Wangguan_V1_0_0.zip
-          unzip -o Wangguan_V1_0_0.zip
+          unzip -t Wangguan_V1_0_0_fixed.zip
+          unzip -o Wangguan_V1_0_0_fixed.zip
           cd Dale
           mkdir -p test-classes
           SRC=app/src/main/java/com/dale/todo
