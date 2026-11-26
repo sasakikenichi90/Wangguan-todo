@@ -1,4 +1,4 @@
-name: Build Wangguan V1.0.0 APK
+name: Build Wangguan V1.0.1 APK
 on:
   workflow_dispatch:
   push:
@@ -20,8 +20,8 @@ jobs:
           gradle-version: '8.9'
       - name: Unpack and test
         run: |
-          unzip -t Wangguan_V1_0_0_fixed.zip
-          unzip -o Wangguan_V1_0_0_fixed.zip
+          unzip -t Wangguan_V1_0_1.zip
+          unzip -o Wangguan_V1_0_1.zip
           cd Dale
           mkdir -p test-classes
           SRC=app/src/main/java/com/dale/todo
@@ -113,4 +113,4 @@ jobs:
             echo "Version already published; increment version before rebuilding."
             exit 1
           fi
-          gh release create "$TAG" "$APK" update.json --target "$GITHUB_SHA" --title "Wangguan V$VERSION" --notes "王冠每日计划首版；支持直接读取更新清单、下载续传及签名校验。" --latest
+          gh release create "$TAG" "$APK" update.json --target "$GITHUB_SHA" --title "Wangguan V$VERSION" --notes "常规更新" --latest
